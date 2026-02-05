@@ -34,6 +34,7 @@ LeoO is built for:
 - Wi-Fi / mesh / LTE field testing / Cloud testing for AWS(VPC/EC2/Loadbalancer) with hight traffic 
 - NAT, firewall, and session table stress testing
 - Pre-deployment network readiness checks
+- Inflight testing and simulate up to 200k session with concorent session per second , data rates per seccond. 
 
 ---
 
