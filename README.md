@@ -46,14 +46,14 @@ LeoO is built for:
 
 
 ---
-NetScale Traffic Generator is developed to help network teams perform
+LeoO Traffic Generator is developed to help network teams perform
 realistic, large-scale testing directly in live environments.
 
 We built this tool because hardware traffic generators don’t work well in field environments. This allows us to simulate up to 200K real client sessions directly in live networks, with both automation and operational usability.”
 
 Networking product companies
-ISPs
-System integrators
+ISPs, AWS, Azure, GPC
+System integrators,Inflight testing
 Field testing teams
 
 📧 Contact: munna.radhy@gmail.com
