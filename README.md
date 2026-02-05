@@ -31,7 +31,7 @@ Hardware generators work well in labs but are difficult to deploy in field envir
 
 LeoO is built for:
 - Customer-site validation
-- Wi-Fi / mesh / LTE field testing
+- Wi-Fi / mesh / LTE field testing / Cloud testing for AWS(VPC/EC2/Loadbalancer) with hight traffic 
 - NAT, firewall, and session table stress testing
 - Pre-deployment network readiness checks
 
