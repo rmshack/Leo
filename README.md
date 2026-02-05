@@ -3,7 +3,7 @@
 
 # LeoO Traffic Generator (Community Edition)
 
-A lightweight, high-scale network traffic generator designed for **field testing** and
+A lightweight, high-scale network traffic generator designed for **field testing** , **inflight** and
 **production-like network validation**.
 
 This community edition demonstrates the core traffic engine and CLI workflows used
