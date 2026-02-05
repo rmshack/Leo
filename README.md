@@ -1,5 +1,6 @@
 # LeoO
 **LeoO** Traffic Generator is developed to help network teams perform realistic, large-scale testing directly in live environments.
+Designed for in-flight, end-to-end data-path load, performance, and latency validation in live network environments, without reliance on dedicated hardware traffic generators.
 
 # LeoO Traffic Generator (Community Edition)
 
