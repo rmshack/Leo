@@ -11,7 +11,7 @@ to simulate large numbers of concurrent network sessions in real environments.
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 - Generate TCP and UDP traffic at scale
 - Designed for field and on-site testing
@@ -24,7 +24,7 @@ to simulate large numbers of concurrent network sessions in real environments.
 
 ---
 
-## 🎯 Why This Tool?
+##  Why This Tool?
 
 Traditional tools like iperf focus on throughput.
 Hardware generators work well in labs but are difficult to deploy in field environments.
@@ -37,7 +37,7 @@ LeoO is built for:
 
 ---
 
-## 🧪 Example Use Cases
+##  Example Use Cases
 
 - Simulate 10,000 concurrent TCP sessions
 - Ramp connections at controlled CPS
