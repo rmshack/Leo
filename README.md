@@ -46,6 +46,7 @@ LeoO is built for:
 - Validate network stability during firmware upgrades
 - Stress-test NAT and firewall capacity
 <img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/59542506-4f8b-4225-96a8-e57422d5a96e" />
+<img width="1242" height="427" alt="image" src="https://github.com/user-attachments/assets/ac345db8-28a1-42ef-983d-650fcd0c81f4" />
 
 
 ---
