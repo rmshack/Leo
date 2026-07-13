@@ -1,1 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeoO Traffic Generator | Ultra-Band 400G-800G</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: #f8fafc;
+            color: #0b1a2f;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(145deg, #0b1a2f 0%, #1a2f4f 100%);
+            color: white;
+            padding: 40px 0 32px;
+            border-bottom: 4px solid #00b8d4;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header h1 i {
+            color: #00d4ff;
+            font-size: 2.6rem;
+        }
+
+        .header .sub {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 8px;
+            font-weight: 300;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+        }
+
+        .header .badge-ultra {
+            background: #00b8d4;
+            color: #0b1a2f;
+            font-weight: 700;
+            padding: 6px 20px;
+            border-radius: 40px;
+            font-size: 1rem;
+            display: inline-block;
+            margin-top: 12px;
+            box-shadow: 0 0 20px rgba(0, 184, 212, 0.3);
+        }
+
+        /* NAV / GITHUB CORNER */
+        .github-corner {
+            float: right;
+            margin-top: -10px;
+        }
+
+        .github-corner a {
+            color: white;
+            font-size: 2.4rem;
+            transition: 0.2s;
+        }
+
+        .github-corner a:hover {
+            color: #00d4ff;
+            transform: scale(1.05);
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-bottom: 3px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        .section-title i {
+            color: #00b8d4;
+            font-size: 2rem;
+        }
+
+        .section-sub {
+            font-size: 1.1rem;
+            color: #2d4059;
+            margin-bottom: 28px;
+            background: #eef2f7;
+            padding: 16px 24px;
+            border-radius: 16px;
+            border-left: 6px solid #00b8d4;
+        }
+
+        /* FEATURE GRID */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin: 32px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 28px 22px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            border: 1px solid #e9edf4;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #00b8d4;
+            box-shadow: 0 16px 40px rgba(0, 184, 212, 0.08);
+        }
+
+        .feature-card i {
+            font-size: 2.2rem;
+            color: #00b8d4;
+            margin-bottom: 14px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #2d4059;
+            font-size: 0.98rem;
+        }
+
+        /* ULTRA-BAND HIGHLIGHT */
+        .ultra-band {
+            background: linear-gradient(135deg, #0b1a2f 0%, #1f3a5f 100%);
+            color: white;
+            border-radius: 32px;
+            padding: 40px 44px;
+            margin: 40px 0;
+            box-shadow: 0 16px 48px rgba(0, 184, 212, 0.15);
+            border: 1px solid #00b8d466;
+        }
+
+        .ultra-band h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .ultra-band h2 i {
+            color: #00d4ff;
+            font-size: 2.6rem;
+        }
+
+        .ultra-band .speed-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            margin: 20px 0 12px;
+        }
+
+        .ultra-band .speed-tags span {
+            background: #00b8d433;
+            border: 1px solid #00b8d488;
+            padding: 6px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            color: #b0eaff;
+        }
+
+        .ultra-band .speed-tags .highlight {
+            background: #00b8d4;
+            color: #0b1a2f;
+            border-color: #00b8d4;
+            box-shadow: 0 0 30px #00b8d466;
+        }
+
+        .ultra-band p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+
+        /* USE CASE / IMAGE PLACEHOLDER */
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 20px 0 32px;
+        }
+
+        .use-case-item {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 24px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .use-case-item i {
+            color: #00b8d4;
+            margin-right: 12px;
+            width: 28px;
+        }
+
+        .img-placeholder {
+            background: #e2e8f0;
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            color: #2d4059;
+            font-weight: 500;
+            border: 2px dashed #94a3b8;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .img-placeholder img {
+            max-width: 100%;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .img-placeholder i {
+            font-size: 2.8rem;
+            color: #3b5a7a;
+            margin: 0 12px;
+        }
+
+        /* AI / SUPERCOMPUTER */
+        .ai-super {
+            background: #e8f0fe;
+            border-radius: 28px;
+            padding: 32px 36px;
+            margin: 36px 0;
+            border: 1px solid #b8cfe0;
+        }
+
+        .ai-super h3 {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ai-super h3 i {
+            color: #0057a3;
+        }
+
+        .ai-super .tag {
+            background: #0b1a2f;
+            color: white;
+            padding: 4px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 40px;
+            margin: 40px 0;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+            border: 1px solid #dce3ec;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-box a {
+            color: #0b1a2f;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-decoration: none;
+            background: #eef2f7;
+            padding: 10px 28px;
+            border-radius: 60px;
+            transition: 0.2s;
+        }
+
+        .contact-box a:hover {
+            background: #00b8d4;
+            color: white;
+        }
+
+        .contact-box i {
+            margin-right: 12px;
+            color: #00b8d4;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 48px;
+            padding: 32px 0;
+            border-top: 1px solid #dce3ec;
+            text-align: center;
+            color: #3b5a7a;
+            font-size: 0.95rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            .header h1 { font-size: 2.4rem; flex-wrap: wrap; }
+            .use-case-grid { grid-template-columns: 1fr; }
+            .ultra-band { padding: 28px 20px; }
+            .contact-box { flex-direction: column; gap: 20px; align-items: stretch; }
+            .github-corner { float: none; text-align: right; margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <div class="github-corner">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <h1>
+            <i class="fas fa-network-wired"></i> LeoO
+        </h1>
+        <div class="sub">
+            <span><i class="fas fa-bolt" style="color:#00d4ff;"></i> Traffic Generator · Community Edition</span>
+            <span><i class="fas fa-server"></i> Ultra-Band 400G – 800G ready</span>
+            <span><i class="fas fa-microchip"></i> AI & Supercomputer optimized</span>
+        </div>
+        <div class="badge-ultra">
+            <i class="fas fa-rocket"></i> 200k+ concurrent sessions · Inflight · Field-ready
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- INTRO -->
+    <p style="font-size:1.2rem; margin: 32px 0 8px; font-weight:400;">
+        <i class="fas fa-check-circle" style="color:#00b8d4;"></i> 
+        LeoO is built for <strong>live-network</strong> validation — no hardware generators needed. 
+        Scale TCP/UDP, stress NAT/firewalls, and test cloud & edge infrastructure.
+    </p>
+
+    <!-- FEATURES -->
+    <div class="section-title">
+        <i class="fas fa-cogs"></i> Core Features
+    </div>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <i class="fas fa-tachometer-alt"></i>
+            <h3>Ultra-Band Ready</h3>
+            <p>Supports 400G to 800G line rates. Built for next-gen data centers and high-speed backbones.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-users"></i>
+            <h3>200k+ Concurrent</h3>
+            <p>Simulate massive client populations — up to 200,000 active sessions with controllable CPS.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud & AI DC</h3>
+            <p>Optimized for AWS, Azure, GCP, and AI supercomputer clusters. In-flight testing at scale.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-laptop"></i>
+            <h3>Lightweight Field Deployment</h3>
+            <p>Run on laptops, VMs, or embedded Linux. No proprietary hardware — just CLI or script.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Latency & Throughput</h3>
+            <p>End-to-end data-path load, latency validation, and long-running stability tests.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-terminal"></i>
+            <h3>Scriptable Automation</h3>
+            <p>Full CLI for CI/CD, network readiness, and automated regression suites.</p>
+        </div>
+    </div>
+
+    <!-- ULTRA-BAND HIGHLIGHT -->
+    <div class="ultra-band">
+        <h2><i class="fas fa-satellite-dish"></i> Ultra-Band 400G – 800G</h2>
+        <div class="speed-tags">
+            <span>400G</span>
+            <span class="highlight">800G</span>
+            <span>600G</span>
+            <span>PAM4 ready</span>
+            <span><i class="fas fa-microchip"></i> Coherent optics</span>
+        </div>
+        <p>
+            LeoO Enterprise natively supports ultra-high bandwidth testing for 400G/800G links. 
+            Whether you're validating ZR optics, DWDM, or AI cluster interconnects — our engine 
+            generates realistic traffic patterns at line rate. <strong>Community Edition</strong> 
+            demonstrates the core engine; enterprise adds advanced PFC, ECN, and telemetry.
+        </p>
+        <p style="margin-top:12px;">
+            <i class="fas fa-database"></i> <strong>Use case:</strong> AI data centers (NVIDIA/AMD clusters), 
+            hyperscale spine-leaf, and metro DWDM networks.
+        </p>
+    </div>
+
+    <!-- AI & SUPERCOMPUTER -->
+    <div class="ai-super">
+        <h3><i class="fas fa-brain"></i> AI Data Center & Supercomputer</h3>
+        <p style="font-size:1.05rem; margin: 12px 0 8px;">
+            <span class="tag">NEW</span> LeoO provides <strong>RDMA over Converged Ethernet (RoCE)</strong> 
+            simulation and congestion control testing for AI/ML clusters. 
+        </p>
+        <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 16px 30px; margin-top: 16px;">
+            <li><i class="fas fa-check-circle" style="color:#0057a3;"></i> 400G/800G RoCEv2</li>
+            <li><i class="fas fa-check-circle" style="color:#0057a3;"></i> ECN / PFC stress</li>
+            <li><i class="fas fa-check-circle" style="color:#0057a3;"></i> Collective communication patterns (All-Reduce)</li>
+            <li><i class="fas fa-check-circle" style="color:#0057a3;"></i> GPU-to-GPU traffic simulation</li>
+        </ul>
+        <p style="margin-top:16px; background:#dce6f0; padding:12px 20px; border-radius:40px;">
+            <i class="fas fa-bolt" style="color:#00b8d4;"></i> 
+            <strong>Enterprise:</strong> full support for NVIDIA Spectrum, Cisco 8000, Juniper QFX, and Arista 7800.
+        </p>
+    </div>
+
+    <!-- USE CASES + IMAGE PLACEHOLDER -->
+    <div class="section-title">
+        <i class="fas fa-bullseye"></i> Use Cases
+    </div>
+    <div class="use-case-grid">
+        <div class="use-case-item"><i class="fas fa-wifi"></i> Wi-Fi / Mesh / LTE field testing</div>
+        <div class="use-case-item"><i class="fas fa-cloud"></i> AWS VPC, EC2, Load Balancer stress</div>
+        <div class="use-case-item"><i class="fas fa-shield-alt"></i> NAT / Firewall / session table</div>
+        <div class="use-case-item"><i class="fas fa-sync-alt"></i> Firmware upgrade validation</div>
+        <div class="use-case-item"><i class="fas fa-database"></i> Pre-deployment readiness</div>
+        <div class="use-case-item"><i class="fas fa-rocket"></i> Inflight testing & 200k CPS ramp</div>
+    </div>
+
+    <!-- IMAGE PLACEHOLDER (as in original) -->
+    <div class="img-placeholder">
+        <div style="text-align:center;">
+            <i class="fas fa-chart-simple"></i> 
+            <span style="display:block; font-weight:600; margin:6px 0;">Concurrent sessions & throughput</span>
+            <span style="display:block; font-size:0.9rem; color:#3b5a7a;">(simulated view)</span>
+        </div>
+        <div style="text-align:center;">
+            <i class="fas fa-arrow-right-arrow-left"></i>
+            <span style="display:block; font-weight:600;">400G → 800G line rate</span>
+            <span style="display:block; font-size:0.9rem; color:#3b5a7a;">Ultra-band ready</span>
+        </div>
+        <!-- mimick the images from the original -->
+        <div style="background:white; padding:6px 18px; border-radius:20px; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+            <i class="fas fa-image"></i> <span style="font-weight:500;">Screenshot: dashboard</span>
+        </div>
+        <div style="background:white; padding:6px 18px; border-radius:20px; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+            <i class="fas fa-image"></i> <span style="font-weight:500;">Screenshot: CPS ramp</span>
+        </div>
+    </div>
+
+    <!-- WHY LEOO -->
+    <div class="section-title">
+        <i class="fas fa-question-circle"></i> Why LeoO?
+    </div>
+    <div class="section-sub">
+        <i class="fas fa-times-circle" style="color:#b91c1c; margin-right:8px;"></i> 
+        <strong>Not iperf</strong> — we focus on session scale and realistic client behavior, not just throughput.
+        <br>
+        <i class="fas fa-check-circle" style="color:#00b8d4; margin-right:8px;"></i>
+        Hardware generators are lab-bound; LeoO is <strong>field-deployable</strong> on any Linux system.
+        <br>
+        <i class="fas fa-check-circle" style="color:#00b8d4; margin-right:8px;"></i>
+        Built for <strong>customer-site validation, inflight testing, and cloud-native environments.</strong>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-box">
+        <div>
+            <i class="fas fa-envelope" style="font-size:1.6rem;"></i>
+            <span style="font-weight:600; font-size:1.2rem;">Contact</span>
+        </div>
+        <a href="mailto:munna.radhy@gmail.com">
+            <i class="fas fa-paper-plane"></i> munna.radhy@gmail.com
+        </a>
+        <span style="color:#3b5a7a; background:#eef2f7; padding:6px 18px; border-radius:40px;">
+            <i class="fab fa-github"></i> LeoO-Community
+        </span>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>
+            <i class="fas fa-copyright"></i> 2025 LeoO Traffic Generator · Community Edition 
+            <span style="margin:0 16px;">|</span> 
+            <i class="fas fa-bolt"></i> Ultra-Band 400G–800G · AI Data Center ready
+            <br>
+            <span style="opacity:0.6; font-size:0.85rem;">
+                Built for network teams, ISPs, cloud providers, and system integrators.
+            </span>
+        </p>
+    </div>
+
+</main>
+
+</body>
+</html>
