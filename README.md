@@ -11,9 +11,9 @@ This community edition demonstrates the core traffic engine and CLI workflows us
 to simulate large numbers of concurrent network sessions in real environments.
 
 ---
-[![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/LeoO-Traffic-Generator)](https://github.com/YOUR_USERNAME/LeoO-Traffic-Generator/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/LeoO-Traffic-Generator)](https://github.com/YOUR_USERNAME/LeoO-Traffic-Generator/network)
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://YOUR_USERNAME.github.io/LeoO-Traffic-Generator)
+[![GitHub stars](https://img.shields.io/github/stars/rmshack/LeoO-Traffic-Generator)](https://github.com/YOUR_USERNAME/LeoO-Traffic-Generator/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/rmshack/LeoO-Traffic-Generator)](https://github.com/YOUR_USERNAME/LeoO-Traffic-Generator/network)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://rmshack.github.io/LeoO-Traffic-Generator)
 ##  Key Features
 
 - Generate TCP and UDP traffic at scale
