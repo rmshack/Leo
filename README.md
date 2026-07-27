@@ -64,5 +64,5 @@ Field testing teams
 
 📧 Contact: munna.radhy@gmail.com
 
-🔗 LinkedIn: LinkedIn: www.linkedin.com/in/radhamohan-singh-99a65574/
+
 ---
